@@ -9,6 +9,7 @@ Template Post Type: post
 
 <?php if(have_posts()) :?>
   <?php while (have_posts()) : the_post() ; ?>
+
     <!-- Home -->
 
     <div class="home">
@@ -62,22 +63,15 @@ Template Post Type: post
 
                               <hr />
                               <div class="social_share">
-                              <img src="<?php echo get_template_directory_uri(); ?>/images/facebook-square-brands.png" alt="" />
-                              <span>参加費：<?php 
-                                    if(post_custom('fee') == 0) {
-                                  echo '無料';
-                                  } else {
-                                  echo '¥' . number_format(post_custom('fee'));
-                                  }
-                                ?></span>
+                            
+                              
                             </div>
                           </div>
                           <div class="news_post_meta">
                           <?php the_content(); ?>
                           </div>
 
-                          <hr />
-                          <div class="social_share">
+                          
                             
                             <img src="<?php echo get_template_directory_uri(); ?>/images/facebook-square-brands.png" alt=""/>
                             <img src="<?php echo get_template_directory_uri(); ?>/images/twitter-square-brands.png" alt="" />
