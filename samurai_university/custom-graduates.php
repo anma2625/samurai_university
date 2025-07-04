@@ -52,10 +52,13 @@ Template Post Type: post
                             <?php the_title(); ?>
                             
                           </div>
-                          <div class="news_time">
+                          <div class="news_time graduates_year_box">
                             <div style="background-color: #f0f0f0; padding: 5px;">
                             <span?>卒業年:<?php echo post_custom('graduates_year'); ?></span>
-                            </div> 
+                              <div>
+        <img src="<?php echo get_template_directory_uri(); ?>/images/clock-regular.png" alt="" />
+        <span>卒業年：<?php echo post_custom('graduates_year'); ?></span>
+                          </div> 
                             </div>
                             <div class="news_post_meta">
                               <?php the_content(); ?>
