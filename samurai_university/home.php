@@ -205,69 +205,48 @@
             </div>
           </div>
         </div>
+
+        <?php
+        //取得したい投稿記事などの条件を引数として渡す
+        $args = array(
+          // 投稿タイプ
+          'post_type'      => 'course',
+          // 1ページに表示する投稿数
+          'posts_per_page' => 3,
+        );
+        // データの取得
+        $posts = get_posts($args);
+        ?>
+
         <div class="row courses_row">
+          <!-- ループ処理 -->
+    <?php foreach ($posts as $post) : ?>
+      <?php setup_postdata($post); ?>
           <div class="col-lg-4 course_col">
             <div class="course">
               <div class="course_image">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pic6-3.jpg" alt="" />
+              <?php the_post_thumbnail();?>
               </div>
               <div class="course_body">
                 <h3 class="course_title">
-                  <a href="courses_detail.html">教育学部</a>
+                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h3>
                 <div class="course_text">
                   <p>
-                    広い視野と総合力を持つ世界に通用する、教育者・指導者を育成
+                    <?php echo wp_trim_words(get_the_content(), 22, '...'); ?>
                   </p>
                 </div>
               </div>
               <div class="course_footer">
                 <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
-                  <div class="course_price ml-auto">詳細を見る</div>
+                  <div class="course_price ml-auto"><a href="<?php the_permalink(); ?>">詳細を見る</a></div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 course_col">
-            <div class="course">
-              <div class="course_image">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pic6-1.jpg" alt="" />
-              </div>
-              <div class="course_body">
-                <h3 class="course_title">
-                  <a href="courses_detail.html">理工学部</a>
-                </h3>
-                <div class="course_text">
-                  <p>
-                    未知なる科学技術の扉を開く。 「次世代」を見据えた専門教育
-                  </p>
-                </div>
-              </div>
-              <div class="course_footer">
-                <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
-                  <div class="course_price ml-auto">詳細を見る</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 course_col">
-            <div class="course">
-              <div class="course_image">
-                <img src="<?php echo get_template_directory_uri(); ?>/images/pic6-4.jpg" alt="" />
-              </div>
-              <div class="course_body">
-                <h3 class="course_title"><a href="courses_detail.html">法学部</a></h3>
-                <div class="course_text">
-                  <p>複雑な社会現象を考察する、法律学科と政治学科</p>
-                </div>
-              </div>
-              <div class="course_footer">
-                <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
-                  <div class="course_price ml-auto">詳細を見る</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php endforeach; ?>
+        <!-- 使用した投稿データをリセット -->
+        <?php wp_reset_postdata(); ?>
         </div>
       </div>
     </div>

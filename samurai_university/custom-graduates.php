@@ -53,31 +53,33 @@ Template Post Type: post
                             
                           </div>
                           <div class="news_time graduates_year_box">
-                            <div style="background-color: #f0f0f0; padding: 5px;">
-                            <span?>卒業年:<?php echo post_custom('graduates_year'); ?></span>
+                            <div>
+                            
                               <div>
-        <img src="<?php echo get_template_directory_uri(); ?>/images/clock-regular.png" alt="" />
-        <span>卒業年：<?php echo post_custom('graduates_year'); ?></span>
+                              <img src="<?php echo get_template_directory_uri(); ?>/images/clock-regular.png" alt="" />
+                                <span>卒業年：<?php echo post_custom('graduate_year'); ?></span>
+                               
                           </div> 
                             </div>
-                            <div class="news_post_meta">
-                              <?php the_content(); ?>
-                              </div>
-
-                              <hr />
-                              <div class="social_share">
-                            
-                              
+                        
                             </div>
-                          </div>
                           <div class="news_post_meta">
                           <?php the_content(); ?>
                           </div>
+                            <hr />
+                              <div class="social_share">
+                              <img src="<?php echo get_template_directory_uri(); ?>/images/facebook-square-brands.png" alt=""/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/twitter-square-brands.png" alt="" />
+                              
+                              </div>
+                          
+                        
+                        
+                          </div>
 
                           
+                          
                             
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/facebook-square-brands.png" alt=""/>
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/twitter-square-brands.png" alt="" />
                           </div>
                         </div>
                       </div>
@@ -86,8 +88,7 @@ Template Post Type: post
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+          
     <?php endwhile; ?>
   <?php endif; ?>
 
