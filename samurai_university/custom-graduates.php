@@ -58,7 +58,7 @@ Template Post Type: post
                               <div>
                               <img src="<?php echo get_template_directory_uri(); ?>/images/clock-regular.png" alt="" />
                                 <span>卒業年：<?php echo post_custom('graduate_year'); ?></span>
-                               
+                              
                           </div> 
                             </div>
                         
@@ -77,6 +77,7 @@ Template Post Type: post
                         
                           </div>
 
+          
                           
                           
                             
